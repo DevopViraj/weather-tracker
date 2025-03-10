@@ -1,0 +1,272 @@
+2025-03-10 07:14:02,166 - weather_collector - INFO - Fetching weather data for city ID: 5128581
+2025-03-10 07:14:02,423 - weather_collector - INFO - Successfully retrieved data for New York (City ID: 5128581)
+2025-03-10 07:14:03,424 - weather_collector - INFO - Fetching weather data for city ID: 2643743
+2025-03-10 07:14:03,558 - weather_collector - INFO - Successfully retrieved data for London (City ID: 2643743)
+2025-03-10 07:14:04,559 - weather_collector - INFO - Fetching weather data for city ID: 1850147
+2025-03-10 07:14:04,641 - weather_collector - INFO - Successfully retrieved data for Tokyo (City ID: 1850147)
+2025-03-10 07:14:05,642 - weather_collector - INFO - Fetching weather data for city ID: 1275339
+2025-03-10 07:14:05,748 - weather_collector - INFO - Successfully retrieved data for Mumbai (City ID: 1275339)
+2025-03-10 07:14:06,749 - weather_collector - INFO - Fetching weather data for city ID: 1273294
+2025-03-10 07:14:06,850 - weather_collector - INFO - Successfully retrieved data for Delhi (City ID: 1273294)
+2025-03-10 07:14:07,853 - weather_collector - INFO - Data saved to d:\Road to DevOps\Python Learning\Practicing Python\weather-tracker\app\data\weather_data_20250310071407.json
+
+2025-03-10 07:14:14,596 - weather_collector - INFO - Fetching weather data for city ID: 5128581
+2025-03-10 07:14:14,809 - weather_collector - INFO - Successfully retrieved data for New York (City ID: 5128581)
+2025-03-10 07:14:15,811 - weather_collector - INFO - Fetching weather data for city ID: 2643743
+2025-03-10 07:14:16,044 - weather_collector - INFO - Successfully retrieved data for London (City ID: 2643743)
+2025-03-10 07:14:17,045 - weather_collector - INFO - Fetching weather data for city ID: 1850147
+2025-03-10 07:14:17,128 - weather_collector - INFO - Successfully retrieved data for Tokyo (City ID: 1850147)
+2025-03-10 07:14:18,129 - weather_collector - INFO - Fetching weather data for city ID: 1275339
+2025-03-10 07:14:18,228 - weather_collector - INFO - Successfully retrieved data for Mumbai (City ID: 1275339)
+2025-03-10 07:14:19,229 - weather_collector - INFO - Fetching weather data for city ID: 1273294
+2025-03-10 07:14:19,308 - weather_collector - INFO - Successfully retrieved data for Delhi (City ID: 1273294)
+2025-03-10 07:14:20,311 - weather_collector - INFO - Data saved to d:\Road to DevOps\Python Learning\Practicing Python\weather-tracker\app\data\weather_data_20250310071420.json
+
+2025-03-10 08:17:49,336 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-10 08:17:49,337 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-10 08:17:49,339 - werkzeug - INFO -  * Restarting with stat
+2025-03-10 08:17:50,056 - werkzeug - WARNING -  * Debugger is active!
+2025-03-10 08:17:50,059 - werkzeug - INFO -  * Debugger PIN: 746-607-141
+2025-03-10 08:18:20,223 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:18:20] "GET / HTTP/1.1" 200 -
+2025-03-10 08:18:20,314 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:18:20] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-03-10 08:18:20,605 - weather_collector - INFO - Fetching weather data for city ID: 5128581
+2025-03-10 08:18:20,706 - weather_collector - INFO - Successfully retrieved data for New York (City ID: 5128581)
+2025-03-10 08:18:21,706 - weather_collector - INFO - Fetching weather data for city ID: 2643743
+2025-03-10 08:18:21,839 - weather_collector - INFO - Successfully retrieved data for London (City ID: 2643743)
+2025-03-10 08:18:22,840 - weather_collector - INFO - Fetching weather data for city ID: 1850147
+2025-03-10 08:18:22,923 - weather_collector - INFO - Successfully retrieved data for Tokyo (City ID: 1850147)
+2025-03-10 08:18:23,924 - weather_collector - INFO - Fetching weather data for city ID: 1275339
+2025-03-10 08:18:24,029 - weather_collector - INFO - Successfully retrieved data for Mumbai (City ID: 1275339)
+2025-03-10 08:18:25,030 - weather_collector - INFO - Fetching weather data for city ID: 1273294
+2025-03-10 08:18:25,113 - weather_collector - INFO - Successfully retrieved data for Delhi (City ID: 1273294)
+2025-03-10 08:18:26,115 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:18:26] "GET /api/current HTTP/1.1" 200 -
+2025-03-10 08:18:44,536 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:18:44] "GET /search?q=india HTTP/1.1" 200 -
+2025-03-10 08:18:44,577 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:18:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:18:44,674 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:18:44] "GET /api/search?q=india HTTP/1.1" 200 -
+2025-03-10 08:19:00,372 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:19:00] "GET /api/search?q=karnataka HTTP/1.1" 200 -
+2025-03-10 08:23:05,276 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:23:05] "GET /search?q=india HTTP/1.1" 200 -
+2025-03-10 08:23:05,300 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:23:05] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-03-10 08:23:05,591 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:23:05] "GET /api/search?q=india HTTP/1.1" 200 -
+2025-03-10 08:25:28,815 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:25:28] "GET /search?q=india HTTP/1.1" 200 -
+2025-03-10 08:25:28,830 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:25:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:25:28,946 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:25:28] "GET /api/search?q=india HTTP/1.1" 200 -
+2025-03-10 08:27:07,466 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:27:07] "GET /search?q=india HTTP/1.1" 200 -
+2025-03-10 08:27:07,487 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:27:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:27:07,602 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:27:07] "GET /api/search?q=india HTTP/1.1" 200 -
+2025-03-10 08:27:09,646 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:27:09] "GET / HTTP/1.1" 200 -
+2025-03-10 08:27:09,671 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:27:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:27:09,679 - weather_collector - INFO - Fetching weather data for city ID: 5128581
+2025-03-10 08:27:09,762 - weather_collector - INFO - Successfully retrieved data for New York (City ID: 5128581)
+2025-03-10 08:27:10,763 - weather_collector - INFO - Fetching weather data for city ID: 2643743
+2025-03-10 08:27:10,880 - weather_collector - INFO - Successfully retrieved data for London (City ID: 2643743)
+2025-03-10 08:27:11,880 - weather_collector - INFO - Fetching weather data for city ID: 1850147
+2025-03-10 08:27:11,961 - weather_collector - INFO - Successfully retrieved data for Tokyo (City ID: 1850147)
+2025-03-10 08:27:12,961 - weather_collector - INFO - Fetching weather data for city ID: 1275339
+2025-03-10 08:27:13,066 - weather_collector - INFO - Successfully retrieved data for Mumbai (City ID: 1275339)
+2025-03-10 08:27:14,067 - weather_collector - INFO - Fetching weather data for city ID: 1273294
+2025-03-10 08:27:14,147 - weather_collector - INFO - Successfully retrieved data for Delhi (City ID: 1273294)
+2025-03-10 08:27:15,149 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:27:15] "GET /api/current HTTP/1.1" 200 -
+2025-03-10 08:27:33,316 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:27:33] "GET /search?q=bengaluru HTTP/1.1" 200 -
+2025-03-10 08:27:33,353 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:27:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:27:33,474 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:27:33] "GET /api/search?q=bengaluru HTTP/1.1" 200 -
+2025-03-10 08:28:17,107 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:28:17] "[35m[1mGET /api/search?q=new%20dlehi HTTP/1.1[0m" 500 -
+2025-03-10 08:28:20,428 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:28:20] "GET /api/search?q=new%20delhi HTTP/1.1" 200 -
+2025-03-10 08:28:42,968 - weather_collector - INFO - Data saved to d:\Road to DevOps\Python Learning\Practicing Python\weather-tracker\app\data\weather_data_20250310082842.json
+
+2025-03-10 08:28:42,970 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:28:42] "POST /save-search HTTP/1.1" 200 -
+2025-03-10 08:28:47,477 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:28:47] "GET / HTTP/1.1" 200 -
+2025-03-10 08:28:47,514 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:28:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:28:47,533 - weather_collector - INFO - Fetching weather data for city ID: 5128581
+2025-03-10 08:28:47,624 - weather_collector - INFO - Successfully retrieved data for New York (City ID: 5128581)
+2025-03-10 08:28:48,625 - weather_collector - INFO - Fetching weather data for city ID: 2643743
+2025-03-10 08:28:48,813 - weather_collector - INFO - Successfully retrieved data for London (City ID: 2643743)
+2025-03-10 08:28:49,814 - weather_collector - INFO - Fetching weather data for city ID: 1850147
+2025-03-10 08:28:49,903 - weather_collector - INFO - Successfully retrieved data for Tokyo (City ID: 1850147)
+2025-03-10 08:28:50,904 - weather_collector - INFO - Fetching weather data for city ID: 1275339
+2025-03-10 08:28:51,003 - weather_collector - INFO - Successfully retrieved data for Mumbai (City ID: 1275339)
+2025-03-10 08:28:52,004 - weather_collector - INFO - Fetching weather data for city ID: 1273294
+2025-03-10 08:28:52,090 - weather_collector - INFO - Successfully retrieved data for Delhi (City ID: 1273294)
+2025-03-10 08:28:53,091 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:28:53] "GET /api/current HTTP/1.1" 200 -
+2025-03-10 08:28:59,265 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:28:59] "GET /history HTTP/1.1" 200 -
+2025-03-10 08:28:59,299 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:28:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:28:59,334 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:28:59] "GET /api/history HTTP/1.1" 200 -
+2025-03-10 08:32:56,895 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:32:56] "GET /history HTTP/1.1" 200 -
+2025-03-10 08:32:56,921 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:32:56] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-03-10 08:32:57,003 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:32:57] "GET /api/history HTTP/1.1" 200 -
+2025-03-10 08:33:02,767 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:33:02] "GET /search HTTP/1.1" 200 -
+2025-03-10 08:33:02,799 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:33:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:33:05,872 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:33:05] "GET /api/search?q=delhi HTTP/1.1" 200 -
+2025-03-10 08:33:17,313 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:33:17] "GET / HTTP/1.1" 200 -
+2025-03-10 08:33:17,345 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:33:17] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-03-10 08:33:17,360 - weather_collector - INFO - Fetching weather data for city ID: 5128581
+2025-03-10 08:33:17,439 - weather_collector - INFO - Successfully retrieved data for New York (City ID: 5128581)
+2025-03-10 08:33:18,440 - weather_collector - INFO - Fetching weather data for city ID: 2643743
+2025-03-10 08:33:18,620 - weather_collector - INFO - Successfully retrieved data for London (City ID: 2643743)
+2025-03-10 08:33:19,621 - weather_collector - INFO - Fetching weather data for city ID: 1850147
+2025-03-10 08:33:19,700 - weather_collector - INFO - Successfully retrieved data for Tokyo (City ID: 1850147)
+2025-03-10 08:33:20,700 - weather_collector - INFO - Fetching weather data for city ID: 1275339
+2025-03-10 08:33:20,860 - weather_collector - INFO - Successfully retrieved data for Mumbai (City ID: 1275339)
+2025-03-10 08:33:21,861 - weather_collector - INFO - Fetching weather data for city ID: 1273294
+2025-03-10 08:33:21,944 - weather_collector - INFO - Successfully retrieved data for Delhi (City ID: 1273294)
+2025-03-10 08:33:22,945 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:33:22] "GET /api/current HTTP/1.1" 200 -
+2025-03-10 08:34:30,934 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:34:30] "GET /search?q=goa HTTP/1.1" 200 -
+2025-03-10 08:34:30,968 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:34:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:34:31,087 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:34:31] "GET /api/search?q=goa HTTP/1.1" 200 -
+2025-03-10 08:35:10,508 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:35:10] "GET /api/search?q=delhi HTTP/1.1" 200 -
+2025-03-10 08:35:17,174 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:35:17] "GET /api/search?q=new%20york HTTP/1.1" 200 -
+2025-03-10 08:37:17,462 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:37:17] "GET /search?q=goa HTTP/1.1" 200 -
+2025-03-10 08:37:17,488 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:37:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:37:17,695 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:37:17] "GET /api/search?q=goa HTTP/1.1" 200 -
+2025-03-10 08:37:19,393 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:37:19] "GET / HTTP/1.1" 200 -
+2025-03-10 08:37:19,422 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:37:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:37:19,437 - weather_collector - INFO - Fetching weather data for city ID: 5128581
+2025-03-10 08:37:19,528 - weather_collector - INFO - Successfully retrieved data for New York (City ID: 5128581)
+2025-03-10 08:37:20,530 - weather_collector - INFO - Fetching weather data for city ID: 2643743
+2025-03-10 08:37:20,612 - weather_collector - INFO - Successfully retrieved data for London (City ID: 2643743)
+2025-03-10 08:37:21,614 - weather_collector - INFO - Fetching weather data for city ID: 1850147
+2025-03-10 08:37:21,720 - weather_collector - INFO - Successfully retrieved data for Tokyo (City ID: 1850147)
+2025-03-10 08:37:22,721 - weather_collector - INFO - Fetching weather data for city ID: 1275339
+2025-03-10 08:37:22,804 - weather_collector - INFO - Successfully retrieved data for Mumbai (City ID: 1275339)
+2025-03-10 08:37:23,805 - weather_collector - INFO - Fetching weather data for city ID: 1273294
+2025-03-10 08:37:23,913 - weather_collector - INFO - Successfully retrieved data for Delhi (City ID: 1273294)
+2025-03-10 08:37:24,915 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:37:24] "GET /api/current HTTP/1.1" 200 -
+2025-03-10 08:37:32,664 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:37:32] "GET /search?q=shanghai HTTP/1.1" 200 -
+2025-03-10 08:37:32,704 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:37:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:37:32,809 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:37:32] "GET /api/search?q=shanghai HTTP/1.1" 200 -
+2025-03-10 08:37:48,507 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:37:48] "GET /api/search?q=new%20york HTTP/1.1" 200 -
+2025-03-10 08:37:56,030 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:37:56] "GET /api/search?q=kerala HTTP/1.1" 200 -
+2025-03-10 08:38:10,233 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:38:10] "[35m[1mGET /api/search?q=south%20africa HTTP/1.1[0m" 500 -
+2025-03-10 08:38:37,351 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:38:37] "GET /api/search?q=gangtok HTTP/1.1" 200 -
+2025-03-10 08:38:54,954 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:38:54] "GET /api/search?q=manali HTTP/1.1" 200 -
+2025-03-10 08:43:17,990 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:43:17] "GET /search?q=shanghai HTTP/1.1" 200 -
+2025-03-10 08:43:18,015 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:43:18] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-03-10 08:43:18,180 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:43:18] "GET /api/search?q=shanghai HTTP/1.1" 200 -
+2025-03-10 08:43:19,857 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:43:19] "GET /search?q=shanghai HTTP/1.1" 200 -
+2025-03-10 08:43:19,874 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:43:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:43:19,974 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:43:19] "GET /api/search?q=shanghai HTTP/1.1" 200 -
+2025-03-10 08:43:20,028 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:43:20] "GET /search?q=shanghai HTTP/1.1" 200 -
+2025-03-10 08:43:20,046 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:43:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:43:20,178 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:43:20] "GET /api/search?q=shanghai HTTP/1.1" 200 -
+2025-03-10 08:43:22,387 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:43:22] "GET / HTTP/1.1" 200 -
+2025-03-10 08:43:22,416 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:43:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:43:22,423 - weather_collector - INFO - Fetching weather data for city ID: 5128581
+2025-03-10 08:43:22,501 - weather_collector - INFO - Successfully retrieved data for New York (City ID: 5128581)
+2025-03-10 08:43:23,501 - weather_collector - INFO - Fetching weather data for city ID: 2643743
+2025-03-10 08:43:23,684 - weather_collector - INFO - Successfully retrieved data for London (City ID: 2643743)
+2025-03-10 08:43:24,684 - weather_collector - INFO - Fetching weather data for city ID: 1850147
+2025-03-10 08:43:24,769 - weather_collector - INFO - Successfully retrieved data for Tokyo (City ID: 1850147)
+2025-03-10 08:43:25,769 - weather_collector - INFO - Fetching weather data for city ID: 1275339
+2025-03-10 08:43:25,878 - weather_collector - INFO - Successfully retrieved data for Mumbai (City ID: 1275339)
+2025-03-10 08:43:26,879 - weather_collector - INFO - Fetching weather data for city ID: 1273294
+2025-03-10 08:43:26,963 - weather_collector - INFO - Successfully retrieved data for Delhi (City ID: 1273294)
+2025-03-10 08:43:27,966 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:43:27] "GET /api/current HTTP/1.1" 200 -
+2025-03-10 08:43:34,588 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:43:34] "GET /search?q=patna HTTP/1.1" 200 -
+2025-03-10 08:43:34,621 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:43:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:43:34,717 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:43:34] "GET /api/search?q=patna HTTP/1.1" 200 -
+2025-03-10 08:43:59,672 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:43:59] "GET /api/search?q=tamilnadu HTTP/1.1" 200 -
+2025-03-10 08:44:08,198 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:44:08] "GET /api/search?q=goa HTTP/1.1" 200 -
+2025-03-10 08:49:12,949 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:49:12] "GET /search?q=patna HTTP/1.1" 200 -
+2025-03-10 08:49:12,979 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:49:12] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-03-10 08:49:13,160 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:49:13] "GET /api/search?q=patna HTTP/1.1" 200 -
+2025-03-10 08:49:15,734 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:49:15] "GET / HTTP/1.1" 200 -
+2025-03-10 08:49:15,770 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:49:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:49:15,785 - weather_collector - INFO - Fetching weather data for city ID: 5128581
+2025-03-10 08:49:15,865 - weather_collector - INFO - Successfully retrieved data for New York (City ID: 5128581)
+2025-03-10 08:49:16,866 - weather_collector - INFO - Fetching weather data for city ID: 2643743
+2025-03-10 08:49:16,951 - weather_collector - INFO - Successfully retrieved data for London (City ID: 2643743)
+2025-03-10 08:49:17,952 - weather_collector - INFO - Fetching weather data for city ID: 1850147
+2025-03-10 08:49:18,035 - weather_collector - INFO - Successfully retrieved data for Tokyo (City ID: 1850147)
+2025-03-10 08:49:19,039 - weather_collector - INFO - Fetching weather data for city ID: 1275339
+2025-03-10 08:49:19,145 - weather_collector - INFO - Successfully retrieved data for Mumbai (City ID: 1275339)
+2025-03-10 08:49:20,146 - weather_collector - INFO - Fetching weather data for city ID: 1273294
+2025-03-10 08:49:20,226 - weather_collector - INFO - Successfully retrieved data for Delhi (City ID: 1273294)
+2025-03-10 08:49:21,228 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:49:21] "GET /api/current HTTP/1.1" 200 -
+2025-03-10 08:49:40,430 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:49:40] "GET /search?q=maharshtra HTTP/1.1" 200 -
+2025-03-10 08:49:40,471 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:49:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:49:40,807 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:49:40] "[35m[1mGET /api/search?q=maharshtra HTTP/1.1[0m" 500 -
+2025-03-10 08:49:47,933 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:49:47] "GET /api/search?q=maharashtra HTTP/1.1" 200 -
+2025-03-10 08:49:52,235 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:49:52] "[35m[1mGET /api/search?q=maharashtr HTTP/1.1[0m" 500 -
+2025-03-10 08:49:55,877 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:49:55] "GET /api/search?q=delhi HTTP/1.1" 200 -
+2025-03-10 08:52:08,534 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:52:08] "[35m[1mGET /search?q=maharshtra HTTP/1.1[0m" 500 -
+2025-03-10 08:52:08,585 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:52:08] "GET /search?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-03-10 08:52:08,606 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:52:08] "GET /search?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-03-10 08:52:08,670 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:52:08] "GET /search?__debugger__=yes&cmd=resource&f=console.png&s=MXcW66x49pqm6DomiN6S HTTP/1.1" 200 -
+2025-03-10 08:52:08,732 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:52:08] "GET /search?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-03-10 08:52:45,343 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:52:45] "GET /search?q=maharshtra HTTP/1.1" 200 -
+2025-03-10 08:52:45,366 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:52:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:52:45,644 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:52:45] "[35m[1mGET /api/search?q=maharshtra HTTP/1.1[0m" 500 -
+2025-03-10 08:52:51,518 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:52:51] "[35m[1mGET /api/search?q=maharshtra HTTP/1.1[0m" 500 -
+2025-03-10 08:52:54,982 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:52:54] "GET /api/search?q=delhi HTTP/1.1" 200 -
+2025-03-10 08:53:02,259 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:53:02] "GET /api/search?q=maharastra HTTP/1.1" 200 -
+2025-03-10 08:53:34,982 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:53:34] "GET /api/search?q=delhi HTTP/1.1" 200 -
+2025-03-10 08:53:38,979 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:53:38] "GET /api/search?q=new%20delhi HTTP/1.1" 200 -
+2025-03-10 08:54:11,561 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:54:11] "GET /search?q=maharshtra HTTP/1.1" 200 -
+2025-03-10 08:54:11,580 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:54:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:54:11,688 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:54:11] "[35m[1mGET /api/search?q=maharshtra HTTP/1.1[0m" 500 -
+2025-03-10 08:54:13,242 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:54:13] "GET /search?q=maharshtra HTTP/1.1" 200 -
+2025-03-10 08:54:13,255 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:54:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:54:13,406 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:54:13] "[35m[1mGET /api/search?q=maharshtra HTTP/1.1[0m" 500 -
+2025-03-10 08:54:15,853 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:54:15] "GET / HTTP/1.1" 200 -
+2025-03-10 08:54:15,885 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:54:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:54:15,898 - weather_collector - INFO - Fetching weather data for city ID: 5128581
+2025-03-10 08:54:16,031 - weather_collector - INFO - Successfully retrieved data for New York (City ID: 5128581)
+2025-03-10 08:54:17,032 - weather_collector - INFO - Fetching weather data for city ID: 2643743
+2025-03-10 08:54:17,117 - weather_collector - INFO - Successfully retrieved data for London (City ID: 2643743)
+2025-03-10 08:54:18,118 - weather_collector - INFO - Fetching weather data for city ID: 1850147
+2025-03-10 08:54:18,292 - weather_collector - INFO - Successfully retrieved data for Tokyo (City ID: 1850147)
+2025-03-10 08:54:19,293 - weather_collector - INFO - Fetching weather data for city ID: 1275339
+2025-03-10 08:54:19,376 - weather_collector - INFO - Successfully retrieved data for Mumbai (City ID: 1275339)
+2025-03-10 08:54:20,377 - weather_collector - INFO - Fetching weather data for city ID: 1273294
+2025-03-10 08:54:20,485 - weather_collector - INFO - Successfully retrieved data for Delhi (City ID: 1273294)
+2025-03-10 08:54:21,486 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:54:21] "GET /api/current HTTP/1.1" 200 -
+2025-03-10 08:57:58,207 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:57:58] "GET / HTTP/1.1" 200 -
+2025-03-10 08:57:58,234 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:57:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 08:57:58,256 - weather_collector - INFO - Fetching weather data for city ID: 5128581
+2025-03-10 08:57:58,456 - weather_collector - INFO - Successfully retrieved data for New York (City ID: 5128581)
+2025-03-10 08:57:59,458 - weather_collector - INFO - Fetching weather data for city ID: 2643743
+2025-03-10 08:57:59,538 - weather_collector - INFO - Successfully retrieved data for London (City ID: 2643743)
+2025-03-10 08:58:00,540 - weather_collector - INFO - Fetching weather data for city ID: 1850147
+2025-03-10 08:58:00,649 - weather_collector - INFO - Successfully retrieved data for Tokyo (City ID: 1850147)
+2025-03-10 08:58:01,650 - weather_collector - INFO - Fetching weather data for city ID: 1275339
+2025-03-10 08:58:01,733 - weather_collector - INFO - Successfully retrieved data for Mumbai (City ID: 1275339)
+2025-03-10 08:58:02,735 - weather_collector - INFO - Fetching weather data for city ID: 1273294
+2025-03-10 08:58:02,839 - weather_collector - INFO - Successfully retrieved data for Delhi (City ID: 1273294)
+2025-03-10 08:58:03,841 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 08:58:03] "GET /api/current HTTP/1.1" 200 -
+2025-03-10 09:00:36,543 - werkzeug - INFO -  * Detected change in 'd:\\Road to DevOps\\Python Learning\\Practicing Python\\weather-tracker\\app\\app.py', reloading
+2025-03-10 09:00:36,641 - werkzeug - INFO -  * Restarting with stat
+2025-03-10 09:00:37,433 - werkzeug - WARNING -  * Debugger is active!
+2025-03-10 09:00:37,437 - werkzeug - INFO -  * Debugger PIN: 746-607-141
+2025-03-10 09:00:46,513 - werkzeug - INFO -  * Detected change in 'd:\\Road to DevOps\\Python Learning\\Practicing Python\\weather-tracker\\app\\app.py', reloading
+2025-03-10 09:00:46,584 - werkzeug - INFO -  * Restarting with stat
+2025-03-10 09:00:47,380 - werkzeug - WARNING -  * Debugger is active!
+2025-03-10 09:00:47,384 - werkzeug - INFO -  * Debugger PIN: 746-607-141
+2025-03-10 09:03:36,808 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 09:03:36] "GET / HTTP/1.1" 200 -
+2025-03-10 09:03:36,877 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 09:03:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 09:03:36,909 - weather_collector - INFO - Fetching weather data for city ID: 5128581
+2025-03-10 09:03:37,123 - weather_collector - INFO - Successfully retrieved data for New York (City ID: 5128581)
+2025-03-10 09:03:38,124 - weather_collector - INFO - Fetching weather data for city ID: 2643743
+2025-03-10 09:03:38,206 - weather_collector - INFO - Successfully retrieved data for London (City ID: 2643743)
+2025-03-10 09:03:38,578 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 09:03:38] "GET / HTTP/1.1" 200 -
+2025-03-10 09:03:38,599 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 09:03:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 09:03:38,610 - weather_collector - INFO - Fetching weather data for city ID: 5128581
+2025-03-10 09:03:38,697 - weather_collector - INFO - Successfully retrieved data for New York (City ID: 5128581)
+2025-03-10 09:03:39,207 - weather_collector - INFO - Fetching weather data for city ID: 1850147
+2025-03-10 09:03:39,291 - weather_collector - INFO - Successfully retrieved data for Tokyo (City ID: 1850147)
+2025-03-10 09:03:39,698 - weather_collector - INFO - Fetching weather data for city ID: 2643743
+2025-03-10 09:03:39,779 - weather_collector - INFO - Successfully retrieved data for London (City ID: 2643743)
+2025-03-10 09:03:40,291 - weather_collector - INFO - Fetching weather data for city ID: 1275339
+2025-03-10 09:03:40,373 - weather_collector - INFO - Successfully retrieved data for Mumbai (City ID: 1275339)
+2025-03-10 09:03:40,779 - weather_collector - INFO - Fetching weather data for city ID: 1850147
+2025-03-10 09:03:40,862 - weather_collector - INFO - Successfully retrieved data for Tokyo (City ID: 1850147)
+2025-03-10 09:03:41,374 - weather_collector - INFO - Fetching weather data for city ID: 1273294
+2025-03-10 09:03:41,474 - weather_collector - INFO - Successfully retrieved data for Delhi (City ID: 1273294)
+2025-03-10 09:03:41,863 - weather_collector - INFO - Fetching weather data for city ID: 1275339
+2025-03-10 09:03:41,944 - weather_collector - INFO - Successfully retrieved data for Mumbai (City ID: 1275339)
+2025-03-10 09:03:42,475 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 09:03:42] "GET /api/current HTTP/1.1" 200 -
+2025-03-10 09:03:42,945 - weather_collector - INFO - Fetching weather data for city ID: 1273294
+2025-03-10 09:03:43,029 - weather_collector - INFO - Successfully retrieved data for Delhi (City ID: 1273294)
+2025-03-10 09:03:44,031 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 09:03:44] "GET /api/current HTTP/1.1" 200 -
+2025-03-10 09:04:14,446 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 09:04:14] "GET /search?q=bengaluru HTTP/1.1" 200 -
+2025-03-10 09:04:14,483 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 09:04:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-03-10 09:04:14,598 - werkzeug - INFO - 127.0.0.1 - - [10/Mar/2025 09:04:14] "GET /api/search?q=bengaluru HTTP/1.1" 200 -

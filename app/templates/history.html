@@ -1,0 +1,251 @@
+{% extends "base.html" %}
+
+{% block title %}Weather History - Weather Tracker{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-4 fw-bold">Weather History</h1>
+    <p class="lead text-muted">View historical weather data for your tracked cities</p>
+</div>
+
+<div id="loading" class="text-center">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <p>Loading historical data...</p>
+</div>
+
+<div id="error" class="alert alert-danger" style="display: none;">
+    <p><i class="bi bi-exclamation-triangle-fill me-2"></i>Failed to load historical data. Please try again later.</p>
+</div>
+
+<div id="no-data" class="alert alert-info" style="display: none;">
+    <p><i class="bi bi-info-circle-fill me-2"></i>No historical data available yet. Run the weather collector to gather data or search for cities.</p>
+</div>
+
+<div id="history-container" style="display: none;">
+    <div class="row mb-4">
+        <div class="col-md-8 col-lg-6 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <label for="history-select" class="form-label fw-bold mb-2">
+                        <i class="bi bi-calendar-event me-2"></i>Select a timestamp to view historical data
+                    </label>
+                    <select id="history-select" class="form-select">
+                        <option value="">Select a timestamp...</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="weather-container" class="row">
+        <!-- Weather cards will be inserted here by JavaScript -->
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Global variable to store all history data
+    let historyData = [];
+    
+    // Function to format date
+    function formatDate(timestamp) {
+        // Convert YYYYMMDDHHMMSS to a readable date
+        const year = timestamp.substring(0, 4);
+        const month = timestamp.substring(4, 6);
+        const day = timestamp.substring(6, 8);
+        const hour = timestamp.substring(8, 10);
+        const minute = timestamp.substring(10, 12);
+        const second = timestamp.substring(12, 14);
+        
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const monthName = monthNames[parseInt(month) - 1];
+        
+        return `${day} ${monthName} ${year} at ${hour}:${minute}:${second}`;
+    }
+
+    // Function to get weather icon
+    function getWeatherIcon(iconCode) {
+        return `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    }
+
+    // Function to get weather background based on condition
+    function getWeatherBackground(iconCode) {
+        // Map icon codes to gradient backgrounds
+        const backgrounds = {
+            '01d': 'linear-gradient(120deg, #f6d365 0%, #fda085 100%)', // clear sky day
+            '01n': 'linear-gradient(to top, #30cfd0 0%, #330867 100%)', // clear sky night
+            '02d': 'linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)', // few clouds day
+            '02n': 'linear-gradient(to top, #4481eb 0%, #04befe 100%)', // few clouds night
+            '03d': 'linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%)', // scattered clouds day
+            '03n': 'linear-gradient(to top, #0ba360 0%, #3cba92 100%)', // scattered clouds night
+            '04d': 'linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%)', // broken clouds
+            '04n': 'linear-gradient(to top, #09203f 0%, #537895 100%)', // broken clouds night
+            '09d': 'linear-gradient(to top, #4facfe 0%, #00f2fe 100%)', // shower rain
+            '09n': 'linear-gradient(to top, #4facfe 0%, #00f2fe 100%)', // shower rain
+            '10d': 'linear-gradient(to top, #5ee7df 0%, #b490ca 100%)', // rain day
+            '10n': 'linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%)', // rain night
+            '11d': 'linear-gradient(to right, #868f96 0%, #596164 100%)', // thunderstorm
+            '11n': 'linear-gradient(to top, #09203f 0%, #537895 100%)', // thunderstorm night
+            '13d': 'linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%)', // snow
+            '13n': 'linear-gradient(to top, #c1dfc4 0%, #deecdd 100%)', // snow night
+            '50d': 'linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%)', // mist
+            '50n': 'linear-gradient(to top, #09203f 0%, #537895 100%)' // mist night
+        };
+        
+        return backgrounds[iconCode] || 'linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)';
+    }
+
+    // Function to create a weather card
+    function createWeatherCard(data) {
+        const weather = data.weather[0];
+        const main = data.main;
+        const wind = data.wind;
+        const iconCode = weather.icon;
+        
+        return `
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header" style="background: ${getWeatherBackground(iconCode)} !important;">
+                        <h5 class="mb-0 text-white">
+                            <i class="bi bi-geo-alt-fill me-2"></i>${data.name}, ${data.sys.country}
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="${getWeatherIcon(weather.icon)}" alt="${weather.description}" class="me-3 weather-icon">
+                            <div>
+                                <h4 class="mb-0">${Math.round(main.temp)}°C</h4>
+                                <p class="text-capitalize mb-0">${weather.description}</p>
+                            </div>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <div class="p-2 border rounded">
+                                    <small class="d-block text-muted"><i class="bi bi-thermometer-half me-1"></i>Feels Like</small>
+                                    <span>${Math.round(main.feels_like)}°C</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-2 border rounded">
+                                    <small class="d-block text-muted"><i class="bi bi-droplet-half me-1"></i>Humidity</small>
+                                    <span>${main.humidity}%</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-2 border rounded">
+                                    <small class="d-block text-muted"><i class="bi bi-wind me-1"></i>Wind</small>
+                                    <span>${Math.round(wind.speed * 3.6)} km/h</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-2 border rounded">
+                                    <small class="d-block text-muted"><i class="bi bi-speedometer me-1"></i>Pressure</small>
+                                    <span>${main.pressure} hPa</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3 d-flex justify-content-between text-muted small">
+                            <div>
+                                <i class="bi bi-sunrise me-1"></i> ${new Date(data.sys.sunrise * 1000).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                            </div>
+                            <div>
+                                <i class="bi bi-sunset me-1"></i> ${new Date(data.sys.sunset * 1000).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <small><i class="bi bi-clock-history me-1"></i>Recorded: ${formatDate(data.timestamp)}</small>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // Function to display weather data for a selected timestamp
+    function displayWeatherData(index) {
+        const weatherContainer = document.getElementById('weather-container');
+        weatherContainer.innerHTML = '';
+        
+        if (index === '') {
+            return;
+        }
+        
+        const selectedData = historyData[index].data;
+        
+        // If data is an array, iterate through it
+        if (Array.isArray(selectedData)) {
+            const weatherCardsHtml = selectedData.map(cityData => createWeatherCard(cityData)).join('');
+            weatherContainer.innerHTML = weatherCardsHtml;
+        } else {
+            // If data is a single object
+            weatherContainer.innerHTML = createWeatherCard(selectedData);
+        }
+    }
+
+    // Function to fetch and display historical data
+    function fetchHistoricalData() {
+        const loadingElement = document.getElementById('loading');
+        const errorElement = document.getElementById('error');
+        const noDataElement = document.getElementById('no-data');
+        const historyContainer = document.getElementById('history-container');
+        const historySelect = document.getElementById('history-select');
+        
+        // Show loading, hide other elements
+        loadingElement.style.display = 'block';
+        errorElement.style.display = 'none';
+        noDataElement.style.display = 'none';
+        historyContainer.style.display = 'none';
+        
+        fetch('/api/history')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Hide loading
+                loadingElement.style.display = 'none';
+                
+                // Store data globally
+                historyData = data;
+                
+                // Check if we have data
+                if (data && data.length > 0) {
+                    // Populate the select dropdown
+                    historySelect.innerHTML = '<option value="">Select a timestamp...</option>';
+                    
+                    data.forEach((item, index) => {
+                        const option = document.createElement('option');
+                        option.value = index;
+                        option.textContent = formatDate(item.timestamp);
+                        historySelect.appendChild(option);
+                    });
+                    
+                    // Show history container
+                    historyContainer.style.display = 'block';
+                } else {
+                    // Show no data message
+                    noDataElement.style.display = 'block';
+                }
+            })
+            .catch(error => {
+                // Hide loading, show error
+                loadingElement.style.display = 'none';
+                errorElement.style.display = 'block';
+                console.error('Error fetching historical data:', error);
+            });
+    }
+
+    // Initial fetch when page loads
+    document.addEventListener('DOMContentLoaded', fetchHistoricalData);
+    
+    // History select change handler
+    document.getElementById('history-select').addEventListener('change', function() {
+        displayWeatherData(this.value);
+    });
+</script>
+{% endblock %} 

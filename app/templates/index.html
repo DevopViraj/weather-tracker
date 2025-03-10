@@ -1,0 +1,275 @@
+{% extends "base.html" %}
+
+{% block title %}Current Weather - Weather Tracker{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-4 fw-bold">Current Weather</h1>
+    <p class="lead text-muted">Real-time weather information for your tracked cities</p>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-8 col-lg-6 mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <form action="/search" method="get" class="mb-0">
+                    <div class="input-group">
+                        <span class="input-group-text border-end-0">
+                            <i class="bi bi-search text-muted"></i>
+                        </span>
+                        <input type="text" name="q" class="form-control border-start-0" placeholder="Search for a city..." required minlength="3">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-search me-1"></i> Search
+                        </button>
+                    </div>
+                    <div class="form-text">Enter a city name to get its current weather</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="loading" class="text-center">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <p>Loading weather data...</p>
+</div>
+
+<div id="error" class="alert alert-danger" style="display: none;">
+    <p><i class="bi bi-exclamation-triangle-fill me-2"></i>Failed to load weather data. Please try again later.</p>
+</div>
+
+<div id="weather-container" class="row" style="display: none;">
+    <!-- Weather cards will be inserted here by JavaScript -->
+</div>
+
+<div class="mt-4 text-center">
+    <button id="refresh-btn" class="btn btn-primary">
+        <i class="bi bi-arrow-clockwise me-2"></i> Refresh Data
+    </button>
+</div>
+{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Function to format date
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        return date.toLocaleString();
+    }
+
+    // Function to get weather icon
+    function getWeatherIcon(iconCode) {
+        return `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    }
+
+    // Get elegant, subtle background based on weather condition
+    function getWeatherBackground(iconCode) {
+        // Map icon codes to refined gradient backgrounds
+        const backgrounds = {
+            '01d': 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)', // clear sky day
+            '01n': 'linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)', // clear sky night
+            '02d': 'linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)', // few clouds day
+            '02n': 'linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)', // few clouds night
+            '03d': 'linear-gradient(135deg, #3e5151 0%, #decba4 100%)', // scattered clouds day
+            '03n': 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)', // scattered clouds night
+            '04d': 'linear-gradient(135deg, #757f9a 0%, #d7dde8 100%)', // broken clouds
+            '04n': 'linear-gradient(135deg, #323232 0%, #3F3F3F 40%, #1C1C1C 150%)', // broken clouds night
+            '09d': 'linear-gradient(135deg, #1A2980 0%, #26D0CE 100%)', // shower rain
+            '09n': 'linear-gradient(135deg, #1A2980 0%, #26D0CE 100%)', // shower rain
+            '10d': 'linear-gradient(135deg, #2E3192 0%, #1BFFFF 100%)', // rain day
+            '10n': 'linear-gradient(135deg, #000428 0%, #004e92 100%)', // rain night
+            '11d': 'linear-gradient(135deg, #09203f 0%, #537895 100%)', // thunderstorm
+            '11n': 'linear-gradient(135deg, #16222A 0%, #3A6073 100%)', // thunderstorm night
+            '13d': 'linear-gradient(135deg, #8e9eab 0%, #eef2f3 100%)', // snow
+            '13n': 'linear-gradient(135deg, #4b6cb7 0%, #182848 100%)', // snow night
+            '50d': 'linear-gradient(135deg, #606c88 0%, #3f4c6b 100%)', // mist
+            '50n': 'linear-gradient(135deg, #232526 0%, #414345 100%)' // mist night
+        };
+        
+        return backgrounds[iconCode] || 'linear-gradient(135deg, #232526 0%, #414345 100%)';
+    }
+
+    // Function that applies refined weather themes
+    function getWeatherThemeClass(weatherId, temp) {
+        const weatherCategory = Math.floor(weatherId / 100);
+        
+        if (temp > 28) {
+            return 'hot-weather';
+        } else if (temp < 5) {
+            return 'cold-weather';
+        } else if (weatherCategory === 2 || weatherCategory === 3 || weatherCategory === 5) {
+            return 'rainy-weather';
+        } else if (weatherCategory === 6) {
+            return 'snowy-weather';
+        } else if (weatherCategory === 7 || weatherId > 800) {
+            return 'cloudy-weather';
+        } else if (weatherId === 800) {
+            return 'clear-weather';
+        }
+        
+        return 'clear-weather';
+    }
+
+    // Function to create a weather card - elegant design
+    function createWeatherCard(data) {
+        const weather = data.weather[0];
+        const main = data.main;
+        const wind = data.wind;
+        const iconCode = weather.icon;
+        
+        // Get theme class
+        const themeClass = getWeatherThemeClass(weather.id, main.temp);
+        
+        return `
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 card-animation">
+                    <div class="card-header" style="background: ${getWeatherBackground(iconCode)} !important;">
+                        <h5 class="mb-0 text-white">
+                            <i class="bi bi-geo-alt-fill me-2"></i>${data.name}, ${data.sys.country}
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="${getWeatherIcon(weather.icon)}" alt="${weather.description}" class="me-3 weather-icon">
+                            <div>
+                                <h4 class="mb-0">${Math.round(main.temp)}°C</h4>
+                                <p class="text-capitalize mb-0">${weather.description}</p>
+                            </div>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <div class="p-2 border rounded">
+                                    <small class="d-block text-muted"><i class="bi bi-thermometer-half me-1"></i>Feels Like</small>
+                                    <span>${Math.round(main.feels_like)}°C</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-2 border rounded">
+                                    <small class="d-block text-muted"><i class="bi bi-droplet-half me-1"></i>Humidity</small>
+                                    <span>${main.humidity}%</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-2 border rounded">
+                                    <small class="d-block text-muted"><i class="bi bi-wind me-1"></i>Wind</small>
+                                    <span>${Math.round(wind.speed * 3.6)} km/h</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-2 border rounded">
+                                    <small class="d-block text-muted"><i class="bi bi-speedometer me-1"></i>Pressure</small>
+                                    <span>${main.pressure} hPa</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3 d-flex justify-content-between text-muted small">
+                            <div>
+                                <i class="bi bi-sunrise me-1"></i> ${new Date(data.sys.sunrise * 1000).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                            </div>
+                            <div>
+                                <i class="bi bi-sunset me-1"></i> ${new Date(data.sys.sunset * 1000).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <small><i class="bi bi-clock me-1"></i>Updated: ${formatDate(data.timestamp)}</small>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // Function to fetch and display weather data
+    function fetchWeatherData() {
+        const loadingElement = document.getElementById('loading');
+        const errorElement = document.getElementById('error');
+        const weatherContainer = document.getElementById('weather-container');
+        
+        // Show loading, hide error and weather container
+        loadingElement.style.display = 'block';
+        errorElement.style.display = 'none';
+        weatherContainer.style.display = 'none';
+        
+        // Remove any existing weather classes
+        document.body.classList.remove(
+            'hot-weather', 
+            'cold-weather', 
+            'rainy-weather', 
+            'snowy-weather', 
+            'cloudy-weather', 
+            'clear-weather'
+        );
+        
+        fetch('/api/current')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Hide loading
+                loadingElement.style.display = 'none';
+                
+                // Check if we have data
+                if (data && data.length > 0) {
+                    // Create HTML for each weather card
+                    const weatherCardsHtml = data.map(cityData => createWeatherCard(cityData)).join('');
+                    
+                    // Insert cards into container and show it
+                    weatherContainer.innerHTML = weatherCardsHtml;
+                    weatherContainer.style.display = 'flex';
+                    
+                    // Apply weather theme based on the first city (main city)
+                    if (data[0]) {
+                        const mainCity = data[0];
+                        const weather = mainCity.weather[0];
+                        const temp = mainCity.main.temp;
+                        const themeClass = getWeatherThemeClass(weather.id, temp);
+                        document.body.classList.add(themeClass);
+                    }
+                } else {
+                    // Show error if no data
+                    errorElement.style.display = 'block';
+                }
+            })
+            .catch(error => {
+                // Hide loading, show error
+                loadingElement.style.display = 'none';
+                errorElement.style.display = 'block';
+                console.error('Error fetching weather data:', error);
+            });
+    }
+
+    // Initial fetch when page loads
+    document.addEventListener('DOMContentLoaded', fetchWeatherData);
+    
+    // Refresh button click handler with animation
+    document.getElementById('refresh-btn').addEventListener('click', function() {
+        this.classList.add('btn-rotate');
+        fetchWeatherData();
+        setTimeout(() => {
+            this.classList.remove('btn-rotate');
+        }, 1000);
+    });
+
+    // Add CSS for button rotation animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .btn-rotate i {
+            animation: rotate 1s linear;
+        }
+    `;
+    document.head.appendChild(style);
+</script>
+{% endblock %} 

@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  weather-tracker:
+    build: .
+    container_name: weather-tracker
+    ports:
+      - "5000:5000"
+    environment:
+      - OPENWEATHER_API_KEY=${OPENWEATHER_API_KEY}
+      - CITY_IDS=${CITY_IDS}
+      - TZ=Asia/Kolkata
+    volumes:
+      - ./app/data:/app/data
+    restart: unless-stopped 
