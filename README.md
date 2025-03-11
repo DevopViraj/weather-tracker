@@ -11,6 +11,8 @@ A Flask-based application that tracks and displays weather information.
 - Dark mode UI with animations
 - Personalized recommendations based on weather conditions
 
+# Check it out: http://trackweather.ddns.net:5000/
+
 ## Docker Setup
 
 ### Prerequisites
