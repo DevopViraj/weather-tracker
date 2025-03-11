@@ -13,7 +13,7 @@ A Flask-based application that tracks and displays weather information.
 
 ### Search the URL 
 
-trackweather.ddns.net:5000/
+trackweather.ddns.net:5000
 
 ## Docker Setup
 
